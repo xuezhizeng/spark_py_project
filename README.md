@@ -49,3 +49,37 @@ $ source ~/.zshrc
 $ vim ~/.bashrc
 $ source ~/.bashrc
 ```
+
+
+配置 pycharm 环境
+```
+$ ln -s ~/tools/spark-2.0.0-bin-hadoop2.7 spark
+spark/python >> Mark Directory as >> Sources Root
+$ pip install py4j
+```
+
+## 运行
+
+1、启动 master
+```
+$ spark/sbin/start-master.sh
+```
+
+http://localhost:8080
+
+Spark Master at spark://zhanghedeMacBook-Pro.local:7077
+
+关闭 master
+```
+$ spark/sbin/stop-master.sh
+```
+
+2、启动 worker
+```
+$ spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://0.0.0.0:7077
+```
+
+3、启动 spark-shell
+```
+$ spark/bin/spark-submit --master=spark://zhanghedeMacBook-Pro.local:7077 sms/run.py
+```

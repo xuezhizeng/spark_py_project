@@ -2,3 +2,4 @@
 spark_py.env
 *.idea
 *.pyc
+spark/
