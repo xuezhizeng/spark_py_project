@@ -83,3 +83,15 @@ $ spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://0.0.0.0:70
 ```
 $ spark/bin/spark-submit --master=spark://zhanghedeMacBook-Pro.local:7077 sms/run.py
 ```
+
+
+## 配置
+
+解决 spark-shell 输出日志信息过多
+
+配置 log4j.properties 日志级别
+```
+cp spark/conf/log4j.properties.template spark/conf/log4j.properties
+vim spark/conf/log4j.properties
+log4j.rootCategory=INFO, console 中的 INFO 改为 WARN
+```
